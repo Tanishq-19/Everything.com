@@ -1,0 +1,46 @@
+{% extends "Everything/layout.html" %}
+
+
+{% block body %}
+
+<!-- 	<div style="margin: 200px; border-radius: 10px; border: solid 3px black; background: white; height: 80%;">
+		{{chat.chat}}
+	</div> -->
+	<div style="background: #34eb9e; color: white;">
+		<h2 style="margin-left: 20px;">Your Request</h2>
+	</div>
+
+	<div class="card text-white bg-info mb-3" id="chatinfocard">
+	  <div class="card-header">Seller Details</div>
+<!-- 	  <div class="card-header">{{ order.sender.username }}</div> -->
+	  <div class="card-body">
+	    <!-- <h6 class="card-text">Client Details:</h6> -->
+	    <p class="card-text">Full name: {{ info.fullname }}</p>
+	    <p class="card-text">Shop name: {{ info.shop }}</p>
+	    <p class="card-text">Category: {{ info.p_type }}</p>
+	    <p class="card-text">Address: {{ info.address }}</p>
+	    <p class="card-text">City: {{ info.city }}</p>
+	    <p class="card-text">state: {{ info.state }}</p>
+	    <p class="card-text">ZipCode: {{ info.zipcode }}</p>
+	    <p class="card-text">Contact: {{ info.contact }}</p>
+
+	  </div>
+	</div>
+
+	<div class="chatinfo">
+		<textarea class="form-control" id="exampleFormControlTextarea1" rows="18" placeholder="{{chat.chat}}" disabled></textarea>
+	</div>
+
+	<div class="chatinfo">	
+		<div style="margin-top: 30px;">
+			<form method="post" class="form">
+				{% csrf_token %}
+
+				</div>
+				<button type="submit" class="btn btn-primary btn-lg btn-block">Click and Proceed if you got your order to finish deal</button>
+
+			</form>
+		</div>	
+	</div>
+
+{% endblock %}

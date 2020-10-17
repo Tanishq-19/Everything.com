@@ -1,0 +1,30 @@
+{% extends "Everything/layout.html" %}
+{% load static %}
+
+{% block body %}
+	<div style="background: #34eb9e; color: white;">
+		<h2 style="margin-left: 20px;">Order History</h2>
+	</div>
+	{% for chat in chatslist %}
+		<a href="{% url 'chatinfo' chat.id %}" style="text-decoration: none;">
+			<div class="card" id="chatlist">
+			  <div class="card-body">
+			    <span style="display: inline-block;width:30%;color: black;">Seller id: {{ chat.recipient.username }}</span>
+<!-- 			    <span style="display: inline-block;width: 30%;float: right;">Status: In progress</span>
+			    <span style="display: inline-block;width: 30%; float: right;">Total:&#x20B9</span> -->
+			    {% if not chat.takeaway and not chat.finish %}
+			    	<span style="display: inline-block;width: 30%;float: right; color: red">Status: In progress</span>
+			    {% endif %}
+			    {% if chat.takeaway and not chat.finish %}
+			    	<span style="display: inline-block;width: 30%;float: right; color: green">Status: Ready for takeaway</span>
+			    {% endif %}
+			    {% if chat.takeaway and chat.finish %}
+			    	<span style="display: inline-block;width: 30%;float: right; color: blue">Status: Deal completed</span>	
+			    {% endif %}
+
+			    <span style="display: inline-block;width: 30%; float: right;color: black;">Total:&#x20B9 {{chat.total}}</span>
+			  </div>
+			</div>
+		</a>
+	{% endfor %}
+{% endblock %}

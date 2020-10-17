@@ -1,0 +1,16 @@
+{% extends "Everything/layout.html" %}
+
+
+{% block body %}
+	<div style="background: #34eb9e; color: white;">
+		<h2 style="margin-left: 20px;">Chat to {{ name }}</h2>
+	</div>
+	<div class="form-group">
+		<form method="post" id="chat">
+			{% csrf_token %}
+		    <textarea class="form-control" id="exampleFormControlTextarea1" rows="18" placeholder="Create your list here..." name="chat"></textarea>
+		    
+		   	<input type="submit" value="Send" class="btn btn-primary" style="margin-top: 10px; float: center;">
+	    </form>
+  </div>
+{% endblock %}

@@ -1,0 +1,73 @@
+{% extends "Everything/layout.html" %}
+
+
+{% block body %}
+
+	{% for seller in sellers %}
+
+		<div class="seller">
+
+			<a href="{% url 'chat' seller.seller.username %}" style="text-decoration: none;">
+				<div class="card text-white bg-info mb-3" style="max-width: 100%;">
+				  <div class="card-header">User id: {{ seller.seller.username }}</div>
+				  <div class="card-body">
+				    <h3 class="card-title">{{ seller.shop }}</h3>
+				    <h6 class="card-text">Details:</h6>
+				    <p class="card-text">Owner name: {{ seller.fullname }}</p>
+				    <p class="card-text">Shop category: {{ seller.p_type }}</p>
+				    <p class="card-text">Address: {{ seller.address }}</p>
+				    <p class="card-text">City: {{ seller.city }}</p>
+				    <p class="card-text">state: {{ seller.state }}</p>
+				    <p class="card-text">ZipCode: {{ seller.zipcode }}</p>
+
+				  </div>
+				</div>		
+			</a>
+		</div>
+
+	{% endfor %}
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Everything | Meerut</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	<style type="text/css">
+		body {
+		  background: url('http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/restaurant.png');
+		  font: bold 13px Helvetica, Arial, sans-serif;
+		}
+	</style>
+</head>
+<body>
+	<h1>Logged in Successfully!</h1>
+	<div style="margin-right: 200px; margin-left: 200px;">
+		<div class="card text-white bg-info mb-3" style="max-width: 100%;">
+		  <div class="card-header">Header</div>
+		  <div class="card-body">
+		    <h5 class="card-title">Info card title</h5>
+		    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+		  </div>
+		</div>
+	</div>
+</body>
+</html> -->

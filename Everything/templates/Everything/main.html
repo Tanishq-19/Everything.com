@@ -1,0 +1,97 @@
+{% load static %}
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>Everything|Meerut</title>
+<link href="https://fonts.googleapis.com/css?family=Raleway:100,200" rel="stylesheet">
+
+{% block script %}
+{% endblock %}
+<style>
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body{
+  background-color: #161616;
+  color: #222;
+  font-family: 'Raleway', sans-serif;
+  font-size:16px;
+  letter-spacing: 0.1em;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+h1 {font-size: 20px;}
+h3 {
+  font-size: 38px;
+  color: #07010f;
+}
+p {}
+.warning {color: red;}
+a {
+  color: #222;
+  text-decoration: none;
+}
+a:hover {
+  background-color: #333;
+  color: #1df541;
+  text-decoration: none;
+}
+.btnm {
+  position: relative;
+  display: inline-block;
+  border-radius: 3px;
+  border: 1px solid #222;
+  padding: 10px 30px;
+  font-size: 20px;
+}
+.containerm {
+  background-color: #0886d4;
+  overflow: hidden;
+}
+.layoutm {
+  border-bottom-right-radius: 100%;
+  background-color: #fafafa;
+  width: 680px;
+  height: 680px;
+  border-right: solid 60px #174cd1;
+  border-bottom: solid 60px #174cd1;
+}
+.mainm {
+  padding: 20px;
+  position: absolute;
+}
+@media (min-width: 980px) {
+  h1 {font-size: 2em;}
+  h3 {font-size: 60px;}
+  .mainm {padding: 60px 60px 12px;}
+  .layoutm {
+    border-right: solid 100px #174cd1;
+    border-bottom: solid 100px #174cd1;
+    width: 100%;
+    height: 100%;
+  }
+}
+</style>
+</head>
+<body>
+<div class="containerm">
+  <div class="layoutm">
+    <div class="mainm">
+      
+
+      <div >
+          {% block body %}
+          {% endblock %}
+      </div>
+
+    </div>
+  </div>
+</div>
+</body>
+</html>

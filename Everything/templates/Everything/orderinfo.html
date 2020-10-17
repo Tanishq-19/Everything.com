@@ -1,0 +1,46 @@
+{% extends "Everything/layout_seller.html" %}
+
+
+{% block body %}
+
+	<div style="background: #34eb9e; color: white;">
+		<h2 style="margin-left: 20px;">Order:</h2>
+	</div>
+
+	<div class="card text-white bg-info mb-3" class="chatinfocard">
+	  <div class="card-header">Client Details</div>
+<!-- 	  <div class="card-header">{{ order.sender.username }}</div> -->
+	  <div class="card-body">
+	    <!-- <h6 class="card-text">Client Details:</h6> -->
+	    <p class="card-text">First name: {{ info.firstname }}</p>
+	    <p class="card-text">Last name: {{ info.lastname }}</p>
+	    <p class="card-text">Address: {{ info.address }}</p>
+	    <p class="card-text">City: {{ info.city }}</p>
+	    <p class="card-text">state: {{ info.state }}</p>
+	    <p class="card-text">ZipCode: {{ info.zipcode }}</p>
+	    <p class="card-text">Contact: {{ info.contact }}</p>
+
+	  </div>
+	</div>
+
+	<div class="chatinfo">
+		<textarea class="form-control" id="exampleFormControlTextarea1" rows="18" placeholder="{{order.chat}}" disabled></textarea>
+		
+		<div style="margin-top: 30px;">
+			<form method="post" class="form">
+				{% csrf_token %}
+				<div class="form-row">
+				    <div class="form-group col-md-6">
+				      <label for="inputEmail4">Enter Total:</label>
+				      <input type="number" class="form-control" id="inputEmail4" name="total" required style="float: center;">
+				    </div>
+
+				</div>
+				<button type="submit" class="btn btn-primary btn-lg btn-block">Proceed and notify client to take away</button>
+
+			</form>
+		</div>	
+	</div>
+	
+
+{% endblock %}
